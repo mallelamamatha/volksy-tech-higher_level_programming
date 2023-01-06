@@ -3,5 +3,6 @@ def divisible_by_2(my_list=[]):
     list = []
     if my_list %2 == 0:
        list.append(True)
-   else:
+    else:
        list.append(False)
+return list
