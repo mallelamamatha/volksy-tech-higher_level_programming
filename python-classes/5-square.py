@@ -25,5 +25,8 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        """empty file"""
-        print(self)
+          """
+        prints to the stdout square with # or empty line if 0
+        """
+        print("\n".join(["".join(["#" for a in range(self.__size)])
+                         for b in range(self.__size)]))
