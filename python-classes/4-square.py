@@ -14,7 +14,13 @@ class Square:
 
     def __init__(self, size=0):
         """constructor"""
-        self.__size = 0
+        self.size = size
+    def print_size(self):
+        print("size", self.size)
+
+    p = code(0)
+    """instance of class"""
+    p.print_size()
 
     def area(self):
         """area of square"""
