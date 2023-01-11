@@ -19,7 +19,7 @@ class Square:
     def print_size(self):
         print("size", self.size)
 
-    p = code(0)
+    p = Square(0)
     """instance of class"""
     p.print_size()
 
