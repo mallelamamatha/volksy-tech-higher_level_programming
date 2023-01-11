@@ -15,6 +15,7 @@ class Square:
     def __init__(self, size=0):
         """constructor"""
         self.size = size
+
     def print_size(self):
         print("size", self.size)
 
