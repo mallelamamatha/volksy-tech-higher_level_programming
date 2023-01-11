@@ -9,6 +9,9 @@ class Square:
         self.size = size
 
     def size(self):
+        return self.__size
+
+    def size(self, value):
         """constructor"""
 
         if type(size) is not int:
