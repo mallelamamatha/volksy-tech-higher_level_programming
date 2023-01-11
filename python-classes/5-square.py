@@ -27,4 +27,4 @@ class Square:
     def my_print(self):
         print(self, size = 0)
         s = Square(size, 0)
-        s.size()
+        s.Square()
