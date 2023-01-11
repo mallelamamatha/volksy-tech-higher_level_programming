@@ -25,6 +25,6 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        print(self, size = 0)
+        print(self.size = 0)
         s = Square(size, 0)
         s.my_print()
