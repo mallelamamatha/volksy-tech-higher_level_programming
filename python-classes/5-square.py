@@ -25,7 +25,4 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-          """
-        prints to the stdout square with # or empty line if 0
-        """
         print(self)
