@@ -28,5 +28,4 @@ class Square:
           """
         prints to the stdout square with # or empty line if 0
         """
-        print("\n".join(["".join(["#" for a in range(self.__size)])
-                         for b in range(self.__size)]))
+        print(self)
