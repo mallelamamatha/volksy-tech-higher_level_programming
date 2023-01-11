@@ -17,6 +17,7 @@ class Square:
         self.size = size
 
     def print_size(self):
+        """instance of class"""
         print("size", self.size)
 
     p = Square(0)
