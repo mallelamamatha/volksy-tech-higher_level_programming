@@ -5,7 +5,7 @@
 class Square:
     """ Access and update private attribute"""
     def __init__(self, size=0):
-    self.size = size
+        self.size = size
     def size(self):
         """constructor"""
         if type(size) is not int:
