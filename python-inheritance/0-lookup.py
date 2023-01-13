@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""look up""""
-
+"""Lookup
+"""
 
 
 def lookup(obj):
-"""function that returns the list of avil.attribute and documents and methods of an object"""
+    """Function that returns the list of avail. attributes and methods
+    of an object.
+    """
 
-
-return dir(obj)
+    return dir(obj)
