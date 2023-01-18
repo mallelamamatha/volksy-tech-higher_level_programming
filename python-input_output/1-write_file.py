@@ -3,6 +3,6 @@
 
 
 def write_file(filename="", text=""):
-    '''filename'''
-    with open(filename, "w", enclosing="UTF-8") as myfile:
+    '''file name'''
+    with open(filename, "w", encoding="UTF-8") as myfile:
         print(myfile.write(), end="")
