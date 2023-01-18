@@ -4,5 +4,5 @@
 
 def save_to_json_file(my_obj, filename):
     '''file name'''
-    with open(filename, mode="s") as myfile:
+    with open(filename, mode="w") as myfile:
         return (myfile.write(filename))
