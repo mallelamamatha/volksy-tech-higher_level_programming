@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+'''str'''
+
+
+def save_to_json_file(my_obj, filename):
+    '''file name'''
+    with open(filename, mode="s") as myfile:
+        return (myfile.write(filename))
