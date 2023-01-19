@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-'''str'''
+# 8-load_from_json_file.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines a JSON file-reading function."""
 import json
 
 
 def load_from_json_file(filename):
-    '''file name'''
-    with open(filename, "w") as myfile:
-        return (myfile.write(json.load(filename)))
+    """Create a Python object from a JSON file."""
+    with open(filename) as f:
+        return json.load(f)
