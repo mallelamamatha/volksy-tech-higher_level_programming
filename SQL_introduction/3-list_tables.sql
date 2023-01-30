@@ -1,3 +1,3 @@
---list a table.
---tables.
+-- list a table.
+-- tables.
 SHOW tables;
