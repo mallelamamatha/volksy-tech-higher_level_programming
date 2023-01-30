@@ -1,3 +1,3 @@
 -- first table.
 -- int name.
-CREATE table if not exists first_table (id,name(20));
+CREATE TABLE IF NOT EXISTS first_table (id,name(20));
