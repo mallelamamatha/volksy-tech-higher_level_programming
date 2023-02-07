@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""Comment"""
-
-
+#states from the database
+#usage: select.py<mysql un>
+#<mysql psw>
+#<db>
 import sys
 import MySQLdb
 
