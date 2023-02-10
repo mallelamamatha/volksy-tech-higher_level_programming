@@ -1,89 +1,81 @@
 #!/usr/bin/python3
-# 7-rectangle.py
+# 100-singly_linked_list.py
 # Brennan D Baraban <375@holbertonschool.com>
-"""Defines a Rectangle class."""
+"""Define classes for a singly-linked list."""
 
 
-class Rectangle:
-    """Represent a rectangle.
+class Node:
+    """Represent a node in a singly-linked list."""
 
-    Attributes:
-        number_of_instances (int): The number of Rectangle instances.
-        print_symbol (any): The symbol used for string representation.
-    """
-
-    number_of_instances = 0
-    print_symbol = "#"
-
-    def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
+    def __init__(self, data, next_node=None):
+        """Initialize a new Node.
 
         Args:
-            width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
         """
-        type(self).number_of_instances += 1
-        self.width = width
-        self.height = height
+        self.data = data
+        self.next_node = next_node
 
     @property
-    def width(self):
-        """Get/set the width of the Rectangle."""
-        return self.__width
+    def data(self):
+        """Get/set the data of the Node."""
+        return (self.__data)
 
-    @width.setter
-    def width(self, value):
+    @data.setter
+    def data(self, value):
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
+            raise TypeError("data must be an integer")
+        self.__data = value
 
     @property
-    def height(self):
-        """Get/set the height of the Rectangle."""
-        return self.__height
+    def next_node(self):
+        """Get/set the next_node of the Node."""
+        return (self.__next_node)
 
-    @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
+    @next_node.setter
+    def next_node(self, value):
+        if not isinstance(value, Node) and value is not None:
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = value
 
-    def area(self):
-        """Return the area of the Rectangle."""
-        return (self.__width * self.__height)
 
-    def perimeter(self):
-        """Return the perimeter of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+class SinglyLinkedList:
+    """Represent a singly-linked list."""
+
+    def __init__(self):
+        """Initalize a new SinglyLinkedList."""
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """Insert a new Node to the SinglyLinkedList.
+
+        The node is inserted into the list at the correct
+        ordered numerical position.
+
+        Args:
+            value (Node): The new Node to insert.
+        """
+        new = Node(value)
+        if self.__head is None:
+            new.next_node = None
+            self.__head = new
+        elif self.__head.data > value:
+            new.next_node = self.__head
+            self.__head = new
+        else:
+            tmp = self.__head
+            while (tmp.next_node is not None and
+                    tmp.next_node.data < value):
+                tmp = tmp.next_node
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
     def __str__(self):
-        """Return the printable representation of the Rectangle.
-
-        Represents the rectangle with the # character.
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-
-        rect = []
-        for i in range(self.__height):
-            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
-
-    def __repr__(self):
-        """Return the string representation of the Rectangle."""
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
-        return (rect)
-
-    def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
+        """Define the print() representation of a SinglyLinkedList."""
+        values = []
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(values))
