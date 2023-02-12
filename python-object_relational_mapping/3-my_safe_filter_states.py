@@ -11,4 +11,4 @@ if __name__ == "__main__":
     c.execute("SELECT * FROM `states`")
     for i in c:
         if i[1] == sys.argv[4]:
-            print(iss)
+            print(i)
