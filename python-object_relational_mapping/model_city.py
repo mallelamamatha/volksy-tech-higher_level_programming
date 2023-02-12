@@ -1,22 +1,20 @@
 #!/usr/bin/python3
 """
-Prints all City objects from the database hbtn_0e_14_usa
+Contains class definition of a `City` and an instance
+`Base = declarative_base()`.
 """
-import sys
-from model_state import Base, State
-from model_city import City
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
 
-if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+Base = declarative_base()
 
-    st_cty = session.query(State, City).filter(State.id == City.state_id).all()
 
-    for state, city in st_cty:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+class City(Base):
+    """City Class that inherits from Base"""
+    __tablename__ = 'cities'
+    id = Column(Integer, primary_key=True, nullable=False,
+                autoincrement=True)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'),
+                      nullable=False)
