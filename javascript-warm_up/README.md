@@ -1,1 +1,1 @@
-hi
+java script is amazing
